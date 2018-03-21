@@ -1,0 +1,42 @@
+@charset "ISO-8859-1";
+.bgc{ background-color:#f0f0f0;}
+nxt{font-size:20px;}
+p{font-size:20px;}
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    font-size:20px;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=text]:focus {
+    border: 2px solid #555;
+}
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 10px 10px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    -webkit-transition: 0.5s;
+    font-size:20px;
+    transition: 0.5s;
+    outline: none;
+}
+
+input[type=password]:focus {
+    border: 2px solid #555;
+}
+label{
+	font-size:20px;
+	font-family:times new roman;
+}
+#brd{
+	padding: 10px;
+    border: 2px solid #00b3b3;
+}
