@@ -49,12 +49,18 @@
         password_strength.style.color = color;
     }
     
-    function checkEmail(emailed) {
-
-        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-
-        if (!filter.test(emailed.value)) {
-             return false;
-     }
-        return true;
-    }
+    function checkEmail() {
+//    	var checked=document.getElementById(emailed).value;
+    	  var result=true;
+    	    var e=document.getElementsByName("nothing")[0].value;
+    	    var atindex=e.indexOf("@");
+    	    var dotindex=e.lastIndexOf(".");
+    	    if(atindex<1||dotindex>=e.length-2||dotindex-atindex<3)
+    	    {
+    	    return false;
+    	    }else{
+    	    	document.getElementById("emailid").value=e;
+    	    	return true;
+    	    }
+    	    
+        }

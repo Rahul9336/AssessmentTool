@@ -27,9 +27,12 @@
 Connection con=null;
 if(request.getParameter("submit")!=null){
 String name=request.getParameter("firstname")+" "+request.getParameter("lastname");
-String email=request.getParameter("nothing");
+String email=request.getParameter("myemail");
+System.out.println("hgfhg"+email);
 String pass=request.getParameter("mypass");
-if((email==null&&pass==null)==false){
+boolean r=email.isEmpty() && pass.isEmpty() && name.isEmpty();
+System.out.println(r);
+if(r==true){
 try{
 con=dbcon.getCon();
 PreparedStatement p=con.prepareStatement("insert into examiner (examiner_name,examiner_email,examiner_pass,status)value(?,?,?,?)");
@@ -41,12 +44,12 @@ p.executeUpdate();
 out.println("Sign Up successfully");
 }
 catch(Exception e){%>
-<p style="color:w3-red">Something went wrong</p>
+<p class="w3-red">Something went wrong</p>
 <%
 e.printStackTrace();
 }
 }else{%>
-<p style="color:w3-red">Email and Password Requirement Does not match</p>
+<p class="w3-red">Email and Password Requirement Does not match<br>Required fields Cannot be Blank</p>
 <%
 }
 }
@@ -70,7 +73,7 @@ e.printStackTrace();
 <br>
 <div class="row">
 <div class="col-sm-3"><center><a href="#"><h3 class="btn btn-primary">Sign In</h3></a></center></div>
-<div class="col-sm-6"><center><button type="submit" name="submit"class="btn btn-success">Submit</button></center></div>
+<div class="col-sm-6"><center><button type="submit" onclick="checkEmail('uemails')" name="submit"class="btn btn-success">Submit</button></center></div>
 <div class="col-sm-3"></div>
 </div>
 <input id="upassword" type="hidden" name="mypass" />
